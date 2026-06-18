@@ -1,0 +1,18 @@
+# Erfan Aghdasi
+
+> Personal portfolio of Erfan Aghdasi, a computer science student at SFU (Vancouver, BC) and solo builder of apps, websites, and systems. The site lets visitors browse everything in one place via an interactive iPhone simulator for apps and a browser-window simulator for websites.
+
+## Projects
+
+- [Fetchi](https://fetchi.shop): Taste-driven product aggregator with semantic search and geo-routed rails. Next.js, Azure, Postgres.
+- [WelcomeAide](https://welcomeaide.com): Multilingual AI assistant helping newcomers settle into Canada (21 languages). Next.js 15, Azure ACA.
+- [SilverTouch](https://silvertouchrenovation.com): Renovation studio marketing site. WordPress, Divi.
+- Crumb: iOS app to track gluten-free spending and claim the celiac tax credit. Expo, Cloudflare D1/R2/AI.
+- GloPro: iOS app to control outdoor LED lighting over reverse-engineered BLE. Expo, Reanimated.
+
+## Contact
+
+- Email: erfan@welcomeaide.com
+- GitHub: https://github.com/erfan604
+- Location: Vancouver, BC
+- Open to: co-op and internships, Fall 2026

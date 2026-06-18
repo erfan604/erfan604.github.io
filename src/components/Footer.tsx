@@ -37,11 +37,12 @@ export default function Footer() {
               className="mt-7 max-w-xl space-y-4 text-base leading-relaxed text-ink-soft sm:text-lg"
             >
               <p>
-                Before code, I spent nearly four years in retail and tech sales,
-                more than three of them leading teams of six to ten, including a
-                run as Team Lead at Enjoy Technology that held the highest
-                revenue-per-customer in Canada for twelve straight months, and a
-                Best Buy team that posted the fastest sales growth nationwide.
+                Before code, I spent more than six years in retail and tech
+                sales, nearly four of them leading teams of six to ten,
+                including a run as Team Lead at Enjoy Technology that held the
+                highest revenue-per-customer in Canada for twelve straight
+                months, and a Best Buy team that posted the fastest sales growth
+                nationwide.
               </p>
               <p>
                 <span className="serif-em text-red">

@@ -32,7 +32,9 @@ export default function Footer() {
                 including a run as Team Lead at Enjoy Technology that held the
                 highest revenue-per-customer in Canada for twelve straight
                 months, and a Best Buy team that posted the fastest sales growth
-                nationwide.
+                nationwide under my leadership. More than the numbers, it
+                reflects how invested I get in the companies I join, growing
+                with the team and helping it evolve.
               </p>
               <p>
                 <span className="serif-em text-red">

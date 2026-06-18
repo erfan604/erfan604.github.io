@@ -1,20 +1,9 @@
 import { motion } from 'motion/react'
-import Marquee from './Marquee'
 
 export default function Footer() {
   return (
-    <footer id="about" className="relative mt-10 bg-graphite text-ink">
-      <Marquee
-        items={[
-          'Open to co-op & internships',
-          'Fall 2026',
-          'Let’s build something',
-          'Vancouver / remote',
-        ]}
-        className="border-y border-ink/15 py-4 font-display text-2xl font-semibold sm:text-3xl"
-      />
-
-      <div className="mx-auto max-w-[1400px] px-5 py-20 sm:px-8 sm:py-28">
+    <footer id="about" className="relative mt-10 border-t border-ink/10 bg-graphite text-ink">
+      <div className="mx-auto max-w-[1400px] px-5 py-24 sm:px-8 sm:py-32">
         <div className="grid gap-12 sm:grid-cols-12">
           <div className="sm:col-span-7">
             <span className="kicker text-ink-faint">§ 03 · About</span>
@@ -25,8 +14,9 @@ export default function Footer() {
               transition={{ duration: 0.8 }}
               className="mt-5 max-w-2xl font-display text-3xl leading-[1.15] font-medium sm:text-4xl"
             >
-              I&apos;m Erfan, 26, a CS student at SFU who ships fast and finishes
-              things.
+              I&apos;m Erfan, 26, a computer science student at Simon Fraser
+              University who designs and builds software end to end, from
+              interface to infrastructure.
             </motion.p>
 
             <motion.div
@@ -62,6 +52,7 @@ export default function Footer() {
             <Contact label="GitHub" value="github.com/erfan604" href="https://github.com/erfan604" />
             <Contact label="Location" value="Vancouver, BC" />
             <Contact label="Phone" value="778-791-4020" href="tel:7787914020" />
+            <Contact label="Availability" value="Co-op & internships, Fall 2026" />
           </div>
         </div>
 

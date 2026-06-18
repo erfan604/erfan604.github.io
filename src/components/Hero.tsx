@@ -78,7 +78,7 @@ export default function Hero() {
           {[
             ['Now', 'Fetchi · WelcomeAide · Crumb'],
             ['Stack', 'TS · React · RN · Cloudflare · Azure'],
-            ['Open to', 'Co-op / internships, Fall 2026'],
+            ['Study', 'BSc Computer Science, SFU'],
           ].map(([k, v]) => (
             <div key={k} className="flex justify-between gap-4 border-b border-line/70 pb-2">
               <span className="uppercase tracking-[0.2em]">{k}</span>

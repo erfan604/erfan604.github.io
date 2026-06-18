@@ -14,7 +14,13 @@ export default function Nav() {
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
       className="fixed top-0 right-0 left-0 z-50"
     >
-      <div className="mx-auto flex max-w-[1400px] items-center justify-between px-5 py-5 sm:px-8">
+      {/* scrim so page content never reads as overlapping the bar */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-paper via-paper/75 to-transparent"
+      />
+
+      <div className="relative mx-auto flex max-w-[1400px] items-center justify-between px-5 py-5 sm:px-8">
         <a href="#top" className="group flex items-center gap-2.5">
           <span className="bg-red grid h-8 w-8 place-items-center rounded-full font-display text-sm font-bold text-white transition-transform duration-300 group-hover:rotate-[18deg]">
             E
@@ -38,13 +44,12 @@ export default function Nav() {
 
         <a
           href="mailto:erfan@welcomeaide.com"
-          className="group flex items-center gap-2 font-mono text-xs tracking-wide"
+          className="group flex items-center gap-1.5 font-mono text-xs tracking-wide text-ink-soft transition-colors hover:text-ink"
         >
-          <span className="relative h-1.5 w-1.5">
-            <span className="absolute inset-0 rounded-full bg-red" />
-            <span className="absolute inset-0 animate-ping rounded-full bg-red" />
+          <span>Contact</span>
+          <span className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+            ↗
           </span>
-          <span className="hidden sm:inline">Available</span>
         </a>
       </div>
     </motion.header>

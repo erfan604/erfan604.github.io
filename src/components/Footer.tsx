@@ -25,13 +25,35 @@ export default function Footer() {
               transition={{ duration: 0.8 }}
               className="mt-5 max-w-2xl font-display text-3xl leading-[1.15] font-medium sm:text-4xl"
             >
-              I&apos;m Erfan, a comp-sci student at SFU who ships fast and
-              finishes things.{' '}
-              <span className="serif-em text-red">
-                Apps, websites, infrastructure, and the occasional reverse-engineered
-                LED protocol.
-              </span>
+              I&apos;m Erfan, 26, a CS student at SFU who ships fast and finishes
+              things.
             </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="mt-7 max-w-xl space-y-4 text-base leading-relaxed text-ink-soft sm:text-lg"
+            >
+              <p>
+                Before code, I spent nearly four years in retail and tech sales,
+                more than three of them leading teams of six to ten, including a
+                run as Team Lead at Enjoy Technology that held the highest
+                revenue-per-customer in Canada for twelve straight months, and a
+                Best Buy team that posted the fastest sales growth nationwide.
+              </p>
+              <p>
+                <span className="serif-em text-red">
+                  My biggest asset is adapting fast.
+                </span>{' '}
+                I&apos;ve moved countries three times and rebuilt from scratch
+                each time, language included. That turned me into a calm, clear
+                communicator who can read a room, earn trust quickly, and get a
+                team moving in the same direction. Now all of it goes into the
+                apps, websites, and systems above.
+              </p>
+            </motion.div>
           </div>
 
           <div className="flex flex-col gap-6 sm:col-span-4 sm:col-start-9">

@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="mx-auto max-w-[1400px] px-5 py-24 sm:px-8 sm:py-32">
         <div className="grid gap-12 sm:grid-cols-12">
           <div className="sm:col-span-7">
-            <span className="kicker text-ink-faint">§ 03 · About</span>
+            <span className="kicker text-ink-faint">About</span>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -42,13 +42,14 @@ export default function Footer() {
                 each time, language included. That turned me into a calm, clear
                 communicator who can read a room, earn trust quickly, and get a
                 team moving in the same direction. Now all of it goes into the
-                apps, websites, and systems above.
+                apps, websites, and systems above, and come my next co-op, that
+                same full focus shifts straight to your team.
               </p>
             </motion.div>
           </div>
 
           <div className="flex flex-col gap-6 sm:col-span-4 sm:col-start-9">
-            <Contact label="Email" value="erfan@welcomeaide.com" href="mailto:erfan@welcomeaide.com" />
+            <Contact label="Email" value="eaa82@sfu.ca" href="mailto:eaa82@sfu.ca" />
             <Contact label="GitHub" value="github.com/erfan604" href="https://github.com/erfan604" />
             <Contact label="Location" value="Vancouver, BC" />
             <Contact label="Phone" value="778-791-4020" href="tel:7787914020" />
@@ -56,15 +57,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-20 overflow-hidden">
-          <p className="font-display text-[clamp(3rem,18vw,16rem)] leading-[0.8] font-extrabold tracking-[-0.04em] text-ink/95">
-            ERFAN
-          </p>
-        </div>
-
-        <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-ink/15 pt-6 font-mono text-[11px] text-ink-faint">
+        <div className="mt-16 flex flex-wrap items-center justify-between gap-4 border-t border-ink/15 pt-6 font-mono text-[11px] text-ink-faint">
           <span>© 2026 Erfan Aghdasi · built from scratch</span>
-          <span>Bricolage Grotesque · Fraunces · JetBrains Mono</span>
           <a href="#top" className="hover:text-ink">Back to top ↑</a>
         </div>
       </div>

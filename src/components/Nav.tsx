@@ -1,4 +1,5 @@
-import { motion } from 'motion/react'
+import { motion, AnimatePresence } from 'motion/react'
+import { useState } from 'react'
 
 const links = [
   { label: 'Work', href: '#showcase' },
@@ -7,6 +8,7 @@ const links = [
 ]
 
 export default function Nav() {
+  const [contactOpen, setContactOpen] = useState(false)
   return (
     <motion.header
       initial={{ y: -24, opacity: 0 }}
@@ -42,15 +44,59 @@ export default function Nav() {
           ))}
         </nav>
 
-        <a
-          href="mailto:erfan@welcomeaide.com"
-          className="group flex items-center gap-1.5 font-mono text-xs tracking-wide text-ink-soft transition-colors hover:text-ink"
-        >
-          <span>Contact</span>
-          <span className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-            ↗
-          </span>
-        </a>
+        <div className="relative">
+          <button
+            type="button"
+            onClick={() => setContactOpen((v) => !v)}
+            aria-expanded={contactOpen}
+            aria-haspopup="menu"
+            className="group flex items-center gap-1.5 font-mono text-xs tracking-wide text-ink-soft transition-colors hover:text-ink"
+          >
+            <span>Contact</span>
+            <span className={`transition-transform ${contactOpen ? 'rotate-90' : 'group-hover:translate-x-0.5 group-hover:-translate-y-0.5'}`}>
+              ↗
+            </span>
+          </button>
+
+          <AnimatePresence>
+            {contactOpen && (
+              <>
+                {/* click-away */}
+                <button
+                  aria-hidden
+                  tabIndex={-1}
+                  onClick={() => setContactOpen(false)}
+                  className="fixed inset-0 z-0 cursor-default"
+                />
+                <motion.div
+                  role="menu"
+                  initial={{ opacity: 0, y: -6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -6 }}
+                  transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
+                  className="absolute right-0 z-10 mt-3 w-60 overflow-hidden rounded-2xl border border-line bg-paper/95 p-1.5 shadow-xl backdrop-blur-md"
+                >
+                  <a
+                    href="mailto:eaa82@sfu.ca"
+                    role="menuitem"
+                    className="block rounded-xl px-4 py-3 transition-colors hover:bg-red/5"
+                  >
+                    <span className="block font-mono text-[10px] tracking-[0.2em] text-ink-faint uppercase">Email</span>
+                    <span className="mt-0.5 block font-display text-sm text-ink">eaa82@sfu.ca</span>
+                  </a>
+                  <a
+                    href="tel:7787914020"
+                    role="menuitem"
+                    className="block rounded-xl px-4 py-3 transition-colors hover:bg-red/5"
+                  >
+                    <span className="block font-mono text-[10px] tracking-[0.2em] text-ink-faint uppercase">Phone</span>
+                    <span className="mt-0.5 block font-display text-sm text-ink">778-791-4020</span>
+                  </a>
+                </motion.div>
+              </>
+            )}
+          </AnimatePresence>
+        </div>
       </div>
     </motion.header>
   )

@@ -12,7 +12,7 @@ export default function ProjectIndex() {
   return (
     <section id="index" className="relative mx-auto max-w-[1400px] px-5 py-20 sm:px-8 sm:py-28">
       <div className="mb-10 border-t-2 border-ink pt-6">
-        <span className="kicker">§ 02 · Full index</span>
+        <span className="kicker">Full index</span>
         <h2 className="mt-3 font-display text-[clamp(2rem,5vw,3.6rem)] font-bold">
           The whole <span className="serif-em text-red">catalogue</span>
         </h2>

@@ -1,7 +1,7 @@
 /**
  * Hand-built mock app UIs rendered inside the iPhone. Using real components
  * (not screenshots) keeps them razor-sharp at any DPI and lets each app carry
- * its own identity — Crumb is warm/bready, GloPro is dark/neon.
+ * its own identity: Crumb is warm/bready, GloPro is dark/neon.
  */
 
 /* ---------------- CRUMB ---------------- */

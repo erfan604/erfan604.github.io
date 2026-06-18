@@ -8,7 +8,7 @@ export default function BrowserWindow() {
 
   return (
     <div className="w-full">
-      {/* window shell — a light window object resting on the grey desk */}
+      {/* window shell: a light window object resting on the grey desk */}
       <div className="overflow-hidden rounded-xl border border-black/15 bg-[#ececec] shadow-[var(--shadow-device)]">
         {/* title bar + tabs */}
         <div className="flex items-end gap-1 border-b border-black/10 bg-[#d7d7d7] px-3 pt-2.5">
@@ -91,7 +91,7 @@ export default function BrowserWindow() {
             <motion.img
               key={project.id}
               src={project.shot}
-              alt={`${project.name} — screenshot`}
+              alt={`${project.name} · screenshot`}
               initial={{ opacity: 0, scale: 1.01 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0 }}
@@ -109,7 +109,7 @@ export default function BrowserWindow() {
         </div>
       </div>
 
-      {/* caption strip — on the grey desk, uses light tokens */}
+      {/* caption strip: on the grey desk, uses light tokens */}
       <AnimatePresence mode="wait">
         <motion.div
           key={project.id}

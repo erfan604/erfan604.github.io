@@ -17,7 +17,7 @@ export default function Footer() {
       <div className="mx-auto max-w-[1400px] px-5 py-20 sm:px-8 sm:py-28">
         <div className="grid gap-12 sm:grid-cols-12">
           <div className="sm:col-span-7">
-            <span className="kicker text-ink/50">§ 03 — About</span>
+            <span className="kicker text-ink-faint">§ 03 · About</span>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -25,7 +25,7 @@ export default function Footer() {
               transition={{ duration: 0.8 }}
               className="mt-5 max-w-2xl font-display text-3xl leading-[1.15] font-medium sm:text-4xl"
             >
-              I&apos;m Erfan — a comp-sci student at SFU who ships fast and
+              I&apos;m Erfan, a comp-sci student at SFU who ships fast and
               finishes things.{' '}
               <span className="serif-em text-red">
                 Apps, websites, infrastructure, and the occasional reverse-engineered
@@ -48,8 +48,8 @@ export default function Footer() {
           </p>
         </div>
 
-        <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-ink/15 pt-6 font-mono text-[11px] text-ink/40">
-          <span>© 2026 Erfan Aghdasi — built from scratch</span>
+        <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-ink/15 pt-6 font-mono text-[11px] text-ink-faint">
+          <span>© 2026 Erfan Aghdasi · built from scratch</span>
           <span>Bricolage Grotesque · Fraunces · JetBrains Mono</span>
           <a href="#top" className="hover:text-ink">Back to top ↑</a>
         </div>
@@ -69,7 +69,7 @@ function Contact({
 }) {
   const inner = (
     <>
-      <span className="font-mono text-[10px] tracking-[0.2em] text-ink/40 uppercase">
+      <span className="font-mono text-[10px] tracking-[0.2em] text-ink-faint uppercase">
         {label}
       </span>
       <span className="mt-1 block font-display text-lg group-hover:text-red">

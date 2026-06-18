@@ -73,7 +73,7 @@ export default function IPhone() {
           className="mt-5 text-center font-mono text-[11px] text-ink-faint"
         >
           {openApp
-            ? `${openApp.name} — ${openApp.status} · tap the bar to go home`
+            ? `${openApp.name} · ${openApp.status} · tap the bar to go home`
             : 'Tap an app to open it'}
         </motion.p>
       </AnimatePresence>

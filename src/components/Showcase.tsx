@@ -21,7 +21,7 @@ export default function Showcase() {
         className="mb-14 flex flex-col gap-6 border-t-2 border-ink pt-6 sm:flex-row sm:items-end sm:justify-between"
       >
         <div>
-          <span className="kicker">§ 01 — Live exhibits</span>
+          <span className="kicker">§ 01 · Live exhibits</span>
           <h2 className="mt-3 max-w-2xl font-display text-[clamp(2rem,5vw,3.6rem)] leading-[1.02] font-bold">
             Everything I&apos;ve built,{' '}
             <span className="serif-em text-red">in one room.</span>
@@ -51,7 +51,7 @@ export default function Showcase() {
               </svg>
             </span>
             <span className="font-mono text-xs tracking-[0.18em] uppercase text-ink-soft">
-              Websites — browse the tabs
+              Websites · browse the tabs
             </span>
           </div>
           <BrowserWindow />
@@ -73,7 +73,7 @@ export default function Showcase() {
               </svg>
             </span>
             <span className="font-mono text-xs tracking-[0.18em] uppercase text-ink-soft">
-              Apps — tap to open
+              Apps · tap to open
             </span>
           </div>
           <IPhone />

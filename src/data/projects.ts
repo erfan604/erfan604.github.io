@@ -33,7 +33,7 @@ export const webProjects: WebProject[] = [
     domain: 'fetchi.shop',
     year: '2026',
     stack: ['Next.js', 'Azure', 'Postgres', 'R2 CDN'],
-    role: 'Solo — design, build, infra, SEO',
+    role: 'Solo: design, build, infra, SEO',
     shot: '/shots/fetchi.png',
     accent: '#ff3b1f',
   },

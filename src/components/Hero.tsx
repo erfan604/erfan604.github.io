@@ -39,7 +39,7 @@ export default function Hero() {
         transition={{ duration: 1, delay: 1 }}
         className="mb-10 flex flex-wrap items-end justify-between gap-4 border-b border-line pb-4"
       >
-        <span className="kicker">Portfolio — Vol. 01</span>
+        <span className="kicker">Portfolio · Vol. 01</span>
         <span className="kicker">Vancouver, BC · 49.28°N</span>
         <span className="kicker hidden sm:block">Est. 2024</span>
       </motion.div>
@@ -64,7 +64,7 @@ export default function Hero() {
           transition={{ duration: 0.9, ease, delay: 0.9 }}
           className="font-display text-lg leading-relaxed text-ink-soft sm:col-span-5 sm:col-start-1 sm:text-xl"
         >
-          Erfan Aghdasi — a CS student and solo builder shipping apps, websites,
+          Erfan Aghdasi, a CS student and solo builder shipping apps, websites,
           and systems end to end. Below, everything I&apos;ve made lives in one
           place: pick up a phone, browse a window, see it run.
         </motion.p>
@@ -78,7 +78,7 @@ export default function Hero() {
           {[
             ['Now', 'Fetchi · WelcomeAide · Crumb'],
             ['Stack', 'TS · React · RN · Cloudflare · Azure'],
-            ['Open to', 'Co-op / internships — Fall 2026'],
+            ['Open to', 'Co-op / internships, Fall 2026'],
           ].map(([k, v]) => (
             <div key={k} className="flex justify-between gap-4 border-b border-line/70 pb-2">
               <span className="uppercase tracking-[0.2em]">{k}</span>

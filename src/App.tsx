@@ -1,3 +1,4 @@
+import Intro from './components/Intro'
 import Cursor from './components/Cursor'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
@@ -9,6 +10,7 @@ import Footer from './components/Footer'
 export default function App() {
   return (
     <div className="grain paper-tint min-h-screen">
+      <Intro />
       <Cursor />
       <Nav />
       <main>

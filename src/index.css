@@ -1,0 +1,187 @@
+@import 'tailwindcss';
+
+/* ============================================================
+   DESIGN TOKENS — "Atelier" editorial light system
+   Bone paper canvas · warm ink · vermillion accent
+   ============================================================ */
+@theme {
+  --color-paper: #f1ede3;
+  --color-paper-2: #e9e3d6;
+  --color-ink: #17130d;
+  --color-ink-soft: #4b4339;
+  --color-ink-faint: #8c8073;
+  --color-line: #d8d0c0;
+  --color-line-strong: #c3b9a5;
+  --color-vermillion: #ff3b1f;
+  --color-vermillion-deep: #d62a12;
+  --color-cobalt: #1f3aff;
+
+  --font-display: 'Bricolage Grotesque', sans-serif;
+  --font-serif: 'Fraunces', serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-sans: 'Bricolage Grotesque', sans-serif;
+
+  --shadow-device: 0 2px 4px rgba(23, 19, 13, 0.04),
+    0 24px 48px -12px rgba(23, 19, 13, 0.18),
+    0 64px 120px -40px rgba(23, 19, 13, 0.28);
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+:root {
+  color-scheme: light;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-feature-settings: 'ss01', 'ss02';
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* Hide native cursor only where the custom one is active (pointer devices) */
+@media (hover: none) {
+  body {
+    cursor: auto;
+  }
+}
+
+::selection {
+  background: var(--color-vermillion);
+  color: var(--color-paper);
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+/* ============================================================
+   PAPER GRAIN + TEXTURE
+   ============================================================ */
+.grain::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  opacity: 0.42;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+}
+
+/* faint paper fiber tint behind everything */
+.paper-tint {
+  background-image: radial-gradient(
+      120% 80% at 100% 0%,
+      rgba(255, 59, 31, 0.05),
+      transparent 55%
+    ),
+    radial-gradient(100% 70% at 0% 100%, rgba(31, 58, 255, 0.04), transparent 50%);
+}
+
+/* ============================================================
+   TYPE HELPERS
+   ============================================================ */
+.kicker {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-ink-faint);
+}
+
+.serif-em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.outline-text {
+  -webkit-text-stroke: 1.4px var(--color-ink);
+  color: transparent;
+}
+
+/* hanging hairline rule used as section divider */
+.rule {
+  height: 1px;
+  background: var(--color-line-strong);
+}
+
+/* ============================================================
+   MARQUEE
+   ============================================================ */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee 32s linear infinite;
+}
+.marquee-paused:hover .animate-marquee {
+  animation-play-state: paused;
+}
+
+/* ============================================================
+   CUSTOM CURSOR
+   ============================================================ */
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  pointer-events: none;
+  border-radius: 9999px;
+  mix-blend-mode: difference;
+}
+.cursor-dot {
+  width: 7px;
+  height: 7px;
+  background: #fff;
+}
+.cursor-ring {
+  width: 38px;
+  height: 38px;
+  border: 1px solid #fff;
+  transition: width 0.25s var(--ease-out-expo),
+    height 0.25s var(--ease-out-expo), background 0.25s ease;
+}
+@media (hover: none) {
+  .cursor-dot,
+  .cursor-ring {
+    display: none;
+  }
+}
+
+/* thin scrollbars inside device screens */
+.device-scroll::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+.device-scroll {
+  scrollbar-width: none;
+}

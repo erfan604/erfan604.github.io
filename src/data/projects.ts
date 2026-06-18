@@ -31,7 +31,7 @@ export const webProjects: WebProject[] = [
     tagline: 'A taste-driven product aggregator. Search, rerank, discover.',
     url: 'https://fetchi.shop',
     domain: 'fetchi.shop',
-    year: '2022',
+    year: '2025',
     stack: ['Next.js', 'Azure', 'Postgres', 'R2 CDN'],
     role: 'Solo: design, build, infra, SEO',
     shot: '/shots/fetchi.png',
@@ -92,12 +92,13 @@ export const appProjects: AppProject[] = [
 /* ---- INDEX LIST (each row jumps to and activates its live exhibit) ---- */
 export type IndexEntry = {
   id: string
-  target: 'web' | 'app'
+  target: 'web' | 'app' | 'repo'
   name: string
   kind: string
   year: string
   blurb: string
   stack: string
+  href?: string // external link (e.g. source repo) for entries with no live exhibit
 }
 
 export const indexEntries: IndexEntry[] = [
@@ -106,7 +107,7 @@ export const indexEntries: IndexEntry[] = [
     target: 'web',
     name: 'Fetchi',
     kind: 'Web · Commerce',
-    year: '2022',
+    year: '2025',
     blurb: 'Product aggregator with semantic search & geo-routed rails.',
     stack: 'Next.js · Azure · Postgres',
   },
@@ -145,5 +146,16 @@ export const indexEntries: IndexEntry[] = [
     year: '2022',
     blurb: 'Renovation studio marketing site.',
     stack: 'WordPress · Divi',
+  },
+  {
+    id: 'rubiks',
+    target: 'repo',
+    name: 'Rubik’s Solver',
+    kind: 'Java · Algorithms',
+    year: '2025',
+    blurb:
+      'Kociemba two-phase IDA* solver in Java: admissible heuristics from precomputed pruning tables, a compact coordinate cube encoding, and clean OOP design searching a 43-quintillion-state space.',
+    stack: 'Java · IDA* · DSA · OOP',
+    href: 'https://github.com/erfan604/RubiksCube-solver',
   },
 ]

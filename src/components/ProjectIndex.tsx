@@ -17,7 +17,7 @@ export default function ProjectIndex() {
           The whole <span className="serif-em text-red">catalogue</span>
         </h2>
         <p className="mt-3 max-w-md text-sm text-ink-soft">
-          Tap any project to open its live exhibit in the room above.
+          Tap any project to open its live exhibit in the room above, or its source.
         </p>
       </div>
 
@@ -26,7 +26,10 @@ export default function ProjectIndex() {
           <motion.button
             key={p.id}
             type="button"
-            onClick={() => focus(p.id, p.target)}
+            onClick={() => {
+              if (p.href) window.open(p.href, '_blank', 'noopener,noreferrer')
+              else focus(p.id, p.target as 'web' | 'app')
+            }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

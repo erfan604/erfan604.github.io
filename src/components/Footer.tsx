@@ -3,7 +3,7 @@ import Marquee from './Marquee'
 
 export default function Footer() {
   return (
-    <footer id="about" className="relative mt-10 bg-ink text-paper">
+    <footer id="about" className="relative mt-10 bg-graphite text-ink">
       <Marquee
         items={[
           'Open to co-op & internships',
@@ -11,13 +11,13 @@ export default function Footer() {
           'Let’s build something',
           'Vancouver / remote',
         ]}
-        className="border-y border-paper/15 py-4 font-display text-2xl font-semibold sm:text-3xl"
+        className="border-y border-ink/15 py-4 font-display text-2xl font-semibold sm:text-3xl"
       />
 
       <div className="mx-auto max-w-[1400px] px-5 py-20 sm:px-8 sm:py-28">
         <div className="grid gap-12 sm:grid-cols-12">
           <div className="sm:col-span-7">
-            <span className="kicker text-paper/50">§ 03 — About</span>
+            <span className="kicker text-ink/50">§ 03 — About</span>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -27,7 +27,7 @@ export default function Footer() {
             >
               I&apos;m Erfan — a comp-sci student at SFU who ships fast and
               finishes things.{' '}
-              <span className="serif-em text-vermillion">
+              <span className="serif-em text-red">
                 Apps, websites, infrastructure, and the occasional reverse-engineered
                 LED protocol.
               </span>
@@ -43,15 +43,15 @@ export default function Footer() {
         </div>
 
         <div className="mt-20 overflow-hidden">
-          <p className="font-display text-[clamp(3rem,18vw,16rem)] leading-[0.8] font-extrabold tracking-[-0.04em] text-paper/95">
+          <p className="font-display text-[clamp(3rem,18vw,16rem)] leading-[0.8] font-extrabold tracking-[-0.04em] text-ink/95">
             ERFAN
           </p>
         </div>
 
-        <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-paper/15 pt-6 font-mono text-[11px] text-paper/40">
+        <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-ink/15 pt-6 font-mono text-[11px] text-ink/40">
           <span>© 2026 Erfan Aghdasi — built from scratch</span>
           <span>Bricolage Grotesque · Fraunces · JetBrains Mono</span>
-          <a href="#top" className="hover:text-paper">Back to top ↑</a>
+          <a href="#top" className="hover:text-ink">Back to top ↑</a>
         </div>
       </div>
     </footer>
@@ -69,19 +69,19 @@ function Contact({
 }) {
   const inner = (
     <>
-      <span className="font-mono text-[10px] tracking-[0.2em] text-paper/40 uppercase">
+      <span className="font-mono text-[10px] tracking-[0.2em] text-ink/40 uppercase">
         {label}
       </span>
-      <span className="mt-1 block font-display text-lg group-hover:text-vermillion">
+      <span className="mt-1 block font-display text-lg group-hover:text-red">
         {value}
       </span>
     </>
   )
   return href ? (
-    <a href={href} target={href.startsWith('http') ? '_blank' : undefined} rel="noreferrer" className="group block border-b border-paper/15 pb-3">
+    <a href={href} target={href.startsWith('http') ? '_blank' : undefined} rel="noreferrer" className="group block border-b border-ink/15 pb-3">
       {inner}
     </a>
   ) : (
-    <div className="group block border-b border-paper/15 pb-3">{inner}</div>
+    <div className="group block border-b border-ink/15 pb-3">{inner}</div>
   )
 }

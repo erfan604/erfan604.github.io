@@ -1,29 +1,30 @@
 @import 'tailwindcss';
 
 /* ============================================================
-   DESIGN TOKENS — "Atelier" editorial light system
-   Bone paper canvas · warm ink · vermillion accent
+   DESIGN TOKENS — "Nardo" industrial system
+   Nardo-grey canvas · bone ink · racing red
+   (token names kept: `paper` = grey bg, `ink` = light foreground)
    ============================================================ */
 @theme {
-  --color-paper: #f1ede3;
-  --color-paper-2: #e9e3d6;
-  --color-ink: #17130d;
-  --color-ink-soft: #4b4339;
-  --color-ink-faint: #8c8073;
-  --color-line: #d8d0c0;
-  --color-line-strong: #c3b9a5;
-  --color-vermillion: #ff3b1f;
-  --color-vermillion-deep: #d62a12;
-  --color-cobalt: #1f3aff;
+  --color-paper: #71726f; /* nardo grey canvas */
+  --color-paper-2: #7c7d7a; /* raised grey wash */
+  --color-ink: #f3f2ee; /* bone foreground text */
+  --color-ink-soft: #d6d6d1; /* secondary text */
+  --color-ink-faint: #a9a9a3; /* tertiary / mono labels */
+  --color-line: #5d5e5b; /* hairline on grey */
+  --color-line-strong: #4f504d; /* stronger divider */
+  --color-red: #e4002b; /* racing red */
+  --color-red-deep: #b00020;
+  --color-graphite: #1d1f1d; /* footer / dark slabs */
 
   --font-display: 'Bricolage Grotesque', sans-serif;
   --font-serif: 'Fraunces', serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
   --font-sans: 'Bricolage Grotesque', sans-serif;
 
-  --shadow-device: 0 2px 4px rgba(23, 19, 13, 0.04),
-    0 24px 48px -12px rgba(23, 19, 13, 0.18),
-    0 64px 120px -40px rgba(23, 19, 13, 0.28);
+  --shadow-device: 0 2px 4px rgba(15, 16, 15, 0.12),
+    0 24px 48px -12px rgba(15, 16, 15, 0.38),
+    0 64px 120px -40px rgba(15, 16, 15, 0.5);
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -32,7 +33,7 @@
    BASE
    ============================================================ */
 :root {
-  color-scheme: light;
+  color-scheme: dark;
 }
 
 * {
@@ -47,6 +48,8 @@ html {
 body {
   margin: 0;
   background-color: var(--color-paper);
+  background-image: linear-gradient(180deg, #777874 0%, #6c6d6a 55%, #65665f 100%);
+  background-attachment: fixed;
   color: var(--color-ink);
   font-family: var(--font-sans);
   font-feature-settings: 'ss01', 'ss02';
@@ -62,7 +65,7 @@ body {
 }
 
 ::selection {
-  background: var(--color-vermillion);
+  background: var(--color-red);
   color: var(--color-paper);
 }
 
@@ -75,7 +78,7 @@ h3 {
 }
 
 /* ============================================================
-   PAPER GRAIN + TEXTURE
+   GRAIN + TEXTURE (matte automotive finish)
    ============================================================ */
 .grain::before {
   content: '';
@@ -83,19 +86,19 @@ h3 {
   inset: 0;
   z-index: 9998;
   pointer-events: none;
-  opacity: 0.42;
-  mix-blend-mode: multiply;
+  opacity: 0.3;
+  mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
 }
 
-/* faint paper fiber tint behind everything */
+/* faint red atmosphere behind everything */
 .paper-tint {
   background-image: radial-gradient(
       120% 80% at 100% 0%,
-      rgba(255, 59, 31, 0.05),
+      rgba(228, 0, 43, 0.08),
       transparent 55%
     ),
-    radial-gradient(100% 70% at 0% 100%, rgba(31, 58, 255, 0.04), transparent 50%);
+    radial-gradient(100% 70% at 0% 100%, rgba(0, 0, 0, 0.12), transparent 55%);
 }
 
 /* ============================================================

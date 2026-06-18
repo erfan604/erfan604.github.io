@@ -91,7 +91,7 @@ function HomeScreen({ onOpen }: { onOpen: (id: string) => void }) {
       className="absolute inset-0 flex flex-col"
       style={{
         background:
-          'radial-gradient(120% 90% at 50% 0%, #3a4a6b 0%, #1c2436 45%, #0c1018 100%)',
+          'radial-gradient(130% 90% at 50% 0%, #5a5c59 0%, #2c2e2c 42%, #131413 100%), radial-gradient(80% 50% at 80% 8%, rgba(228,0,43,0.35), transparent 60%)',
       }}
     >
       <div className="flex flex-1 flex-col items-center px-7 pt-20">

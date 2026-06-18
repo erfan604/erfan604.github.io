@@ -49,7 +49,7 @@ export default function Hero() {
         <Line i={0}>I design &amp;</Line>
         <Line i={1}>
           build{' '}
-          <span className="serif-em font-medium text-vermillion">things</span>
+          <span className="serif-em font-medium text-red">things</span>
         </Line>
         <Line i={2}>
           <span className="outline-text">that ship.</span>

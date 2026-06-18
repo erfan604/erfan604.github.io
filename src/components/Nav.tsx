@@ -16,7 +16,7 @@ export default function Nav() {
     >
       <div className="mx-auto flex max-w-[1400px] items-center justify-between px-5 py-5 sm:px-8">
         <a href="#top" className="group flex items-center gap-2.5">
-          <span className="bg-ink text-paper grid h-8 w-8 place-items-center rounded-full font-display text-sm font-bold transition-transform duration-300 group-hover:rotate-[18deg]">
+          <span className="bg-red grid h-8 w-8 place-items-center rounded-full font-display text-sm font-bold text-white transition-transform duration-300 group-hover:rotate-[18deg]">
             E
           </span>
           <span className="font-mono text-xs tracking-[0.18em] uppercase">
@@ -29,7 +29,7 @@ export default function Nav() {
             <a
               key={l.href}
               href={l.href}
-              className="rounded-full px-4 py-1.5 font-mono text-xs tracking-wide text-ink-soft transition-colors hover:bg-ink hover:text-paper"
+              className="rounded-full px-4 py-1.5 font-mono text-xs tracking-wide text-ink-soft transition-colors hover:bg-red hover:text-white"
             >
               {l.label}
             </a>
@@ -41,8 +41,8 @@ export default function Nav() {
           className="group flex items-center gap-2 font-mono text-xs tracking-wide"
         >
           <span className="relative h-1.5 w-1.5">
-            <span className="absolute inset-0 rounded-full bg-vermillion" />
-            <span className="absolute inset-0 animate-ping rounded-full bg-vermillion" />
+            <span className="absolute inset-0 rounded-full bg-red" />
+            <span className="absolute inset-0 animate-ping rounded-full bg-red" />
           </span>
           <span className="hidden sm:inline">Available</span>
         </a>

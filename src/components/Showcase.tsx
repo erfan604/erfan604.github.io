@@ -24,7 +24,7 @@ export default function Showcase() {
           <span className="kicker">§ 01 — Live exhibits</span>
           <h2 className="mt-3 max-w-2xl font-display text-[clamp(2rem,5vw,3.6rem)] leading-[1.02] font-bold">
             Everything I&apos;ve built,{' '}
-            <span className="serif-em text-vermillion">in one room.</span>
+            <span className="serif-em text-red">in one room.</span>
           </h2>
         </div>
         <p className="max-w-xs text-ink-soft">
@@ -44,7 +44,7 @@ export default function Showcase() {
           className="lg:col-span-8"
         >
           <div className="mb-4 flex items-center gap-3">
-            <span className="grid h-7 w-7 place-items-center rounded-full bg-ink text-paper">
+            <span className="grid h-7 w-7 place-items-center rounded-full bg-graphite text-ink">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
                 <rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" strokeWidth="2" />
                 <path d="M3 9h18" stroke="currentColor" strokeWidth="2" />
@@ -66,7 +66,7 @@ export default function Showcase() {
           className="lg:col-span-4 lg:pt-9"
         >
           <div className="mb-4 flex items-center gap-3">
-            <span className="grid h-7 w-7 place-items-center rounded-full bg-ink text-paper">
+            <span className="grid h-7 w-7 place-items-center rounded-full bg-graphite text-ink">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
                 <rect x="7" y="2" width="10" height="20" rx="2.5" stroke="currentColor" strokeWidth="2" />
                 <path d="M11 18h2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />

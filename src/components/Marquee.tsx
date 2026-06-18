@@ -15,7 +15,7 @@ export default function Marquee({ items, className = '' }: Props) {
         {row.map((item, i) => (
           <span key={i} className="flex items-center">
             <span className="px-6 whitespace-nowrap">{item}</span>
-            <span className="text-vermillion text-xl leading-none">✦</span>
+            <span className="text-red text-xl leading-none">✦</span>
           </span>
         ))}
       </div>

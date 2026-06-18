@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { motion } from 'motion/react'
 import { indexEntries } from '@/data/projects'
 import { useShowcase } from '@/lib/showcase'
@@ -6,7 +5,6 @@ import { useShowcase } from '@/lib/showcase'
 const ease = [0.16, 1, 0.3, 1] as const
 
 export default function ProjectIndex() {
-  const [hover, setHover] = useState<number | null>(null)
   const { focus } = useShowcase()
 
   return (
@@ -30,38 +28,40 @@ export default function ProjectIndex() {
               if (p.href) window.open(p.href, '_blank', 'noopener,noreferrer')
               else focus(p.id, p.target as 'web' | 'app')
             }}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, ease, delay: i * 0.04 }}
-            onMouseEnter={() => setHover(i)}
-            onMouseLeave={() => setHover(null)}
-            className="group relative grid w-full grid-cols-12 items-center gap-2 border-t border-line py-5 text-left transition-colors"
-            style={{ color: hover === i ? 'var(--color-ink)' : undefined }}
+            transition={{ duration: 0.6, ease, delay: i * 0.05 }}
+            className="group relative block w-full border-t border-line py-7 text-left sm:py-9"
           >
-            {/* hover wash */}
-            <span
-              className="absolute inset-0 -z-10 origin-left scale-x-0 bg-paper-2 transition-transform duration-500 group-hover:scale-x-100"
-              style={{ transformOrigin: 'left' }}
-            />
-            <span className="col-span-1 font-mono text-xs text-ink-faint">
-              {String(i + 1).padStart(2, '0')}
-            </span>
-            <span className="col-span-5 font-display text-xl font-bold sm:col-span-4 sm:text-3xl">
-              {p.name}
-            </span>
-            <span className="col-span-6 hidden font-mono text-[11px] text-ink-faint sm:col-span-3 sm:block">
-              {p.kind}
-            </span>
-            <span className="col-span-4 hidden text-sm text-ink-soft sm:col-span-3 sm:block">
-              {p.blurb}
-            </span>
-            <span className="col-span-6 flex items-center justify-end gap-3 text-right font-mono text-xs text-ink-faint sm:col-span-1">
-              {p.year}
-              <span className="text-red opacity-0 transition-all duration-300 group-hover:translate-x-0.5 group-hover:opacity-100">
-                ↗
+            {/* top line: plate number + oversized name, with kind/year tucked right */}
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8">
+              <div className="flex items-baseline gap-4 sm:gap-6">
+                <span className="serif-em text-xl text-ink-faint transition-colors duration-300 group-hover:text-red sm:text-2xl">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <h3 className="font-display text-[clamp(2rem,6vw,4.25rem)] leading-[0.92] font-bold tracking-[-0.02em] text-ink transition-colors duration-300 group-hover:text-red">
+                  {p.name}
+                </h3>
+              </div>
+              <div className="flex shrink-0 items-baseline gap-6 font-mono text-[11px] tracking-wide text-ink-faint sm:flex-col sm:items-end sm:gap-1.5 sm:text-right">
+                <span>{p.kind}</span>
+                <span className="text-ink-soft">{p.year}</span>
+              </div>
+            </div>
+
+            {/* second line: blurb + a labelled action that reveals on hover */}
+            <div className="mt-3 flex items-center gap-4 sm:pl-10">
+              <p className="max-w-xl text-sm leading-relaxed text-ink-soft">
+                {p.blurb}
+              </p>
+              <span className="ml-auto shrink-0 self-end font-mono text-[11px] tracking-[0.18em] text-red uppercase opacity-0 transition-all duration-300 group-hover:translate-x-0.5 group-hover:opacity-100">
+                {p.href ? 'Source ↗' : 'Exhibit ↗'}
               </span>
-            </span>
+            </div>
+
+            {/* signature: a red hairline draws across the row on hover */}
+            <span className="pointer-events-none absolute bottom-0 left-0 h-px w-full origin-left scale-x-0 bg-red transition-transform duration-500 ease-out group-hover:scale-x-100" />
           </motion.button>
         ))}
       </div>

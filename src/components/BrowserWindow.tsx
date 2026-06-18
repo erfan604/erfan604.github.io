@@ -1,10 +1,10 @@
-import { useState } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
 import { webProjects } from '@/data/projects'
+import { useShowcase } from '@/lib/showcase'
 
 export default function BrowserWindow() {
-  const [active, setActive] = useState(0)
-  const project = webProjects[active]
+  const { webId, setWebId } = useShowcase()
+  const project = webProjects.find((p) => p.id === webId) ?? webProjects[0]
 
   return (
     <div className="w-full">
@@ -21,12 +21,12 @@ export default function BrowserWindow() {
 
           {/* tabs */}
           <div className="flex flex-1 items-end gap-1 overflow-x-auto">
-            {webProjects.map((p, i) => {
-              const on = i === active
+            {webProjects.map((p) => {
+              const on = p.id === webId
               return (
                 <button
                   key={p.id}
-                  onClick={() => setActive(i)}
+                  onClick={() => setWebId(p.id)}
                   className={`relative flex max-w-[170px] min-w-0 items-center gap-2 rounded-t-lg px-3 py-2 text-left transition-colors ${
                     on ? 'bg-[#f4f4f4]' : 'bg-transparent hover:bg-[#c9c9c9]'
                   }`}

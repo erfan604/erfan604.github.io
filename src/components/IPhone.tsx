@@ -1,12 +1,12 @@
-import { useState } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
 import { appProjects } from '@/data/projects'
+import { useShowcase } from '@/lib/showcase'
 import { appScreenMap } from './AppScreens'
 
 const ease = [0.16, 1, 0.3, 1] as const
 
 export default function IPhone() {
-  const [open, setOpen] = useState<string | null>(null)
+  const { appId: open, setAppId: setOpen } = useShowcase()
   const openApp = open ? appProjects.find((a) => a.id === open) : null
   const Screen = open ? appScreenMap[open] : null
 

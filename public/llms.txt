@@ -7,11 +7,8 @@
 - [Fetchi](https://fetchi.shop): Taste-driven product aggregator with semantic search and geo-routed rails. Next.js, Azure, Postgres.
 - [WelcomeAide](https://welcomeaide.com): Multilingual AI assistant helping newcomers settle into Canada (21 languages). Next.js 15, Azure ACA.
 - [SilverTouch](https://silvertouchrenovation.com): Renovation studio marketing site. WordPress, Divi.
-- [TechTour247](https://techtour247.com): Design-first, motion-heavy 3D web experiment. three.js / r3f, GSAP.
 - Crumb: iOS app to track gluten-free spending and claim the celiac tax credit. Expo, Cloudflare D1/R2/AI.
 - GloPro: iOS app to control outdoor LED lighting over reverse-engineered BLE. Expo, Reanimated.
-- Polymarket Edge: statistical screener for edge-positive wallets. Python, Dune, Goldsky.
-- AI Mafia: autonomous Discord game master and moderation bot. Node, discord.js.
 
 ## Contact
 

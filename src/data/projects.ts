@@ -61,18 +61,6 @@ export const webProjects: WebProject[] = [
     shot: '/shots/silvertouch.png',
     accent: '#9a7b4f',
   },
-  {
-    id: 'techtour247',
-    name: 'TechTour247',
-    tagline: 'A design-first, motion-heavy experiment in 3D web.',
-    url: 'https://techtour247.com',
-    domain: 'techtour247.com',
-    year: '2026',
-    stack: ['Next.js', 'GSAP', 'three / r3f', 'Theatre'],
-    role: 'Design & build',
-    shot: '/shots/techtour247.png',
-    accent: '#1f3aff',
-  },
 ]
 
 /* ---- APPS (iPhone) ---- */
@@ -101,8 +89,10 @@ export const appProjects: AppProject[] = [
   },
 ]
 
-/* ---- EVERYTHING ELSE (index list) ---- */
+/* ---- INDEX LIST (each row jumps to and activates its live exhibit) ---- */
 export type IndexEntry = {
+  id: string
+  target: 'web' | 'app'
   name: string
   kind: string
   year: string
@@ -112,6 +102,8 @@ export type IndexEntry = {
 
 export const indexEntries: IndexEntry[] = [
   {
+    id: 'fetchi',
+    target: 'web',
     name: 'Fetchi',
     kind: 'Web · Commerce',
     year: '2026',
@@ -119,6 +111,8 @@ export const indexEntries: IndexEntry[] = [
     stack: 'Next.js · Azure · Postgres',
   },
   {
+    id: 'welcomeaide',
+    target: 'web',
     name: 'WelcomeAide',
     kind: 'Web · Nonprofit',
     year: '2026',
@@ -126,6 +120,8 @@ export const indexEntries: IndexEntry[] = [
     stack: 'Next.js 15 · Azure ACA',
   },
   {
+    id: 'crumb',
+    target: 'app',
     name: 'Crumb',
     kind: 'iOS · Health/Fintech',
     year: '2026',
@@ -133,6 +129,8 @@ export const indexEntries: IndexEntry[] = [
     stack: 'Expo · CF D1/R2/AI',
   },
   {
+    id: 'glopro',
+    target: 'app',
     name: 'GloPro',
     kind: 'iOS · Hardware',
     year: '2026',
@@ -140,31 +138,12 @@ export const indexEntries: IndexEntry[] = [
     stack: 'Expo · BLE · Reanimated',
   },
   {
-    name: 'Polymarket Edge',
-    kind: 'System · Research',
-    year: '2026',
-    blurb: 'Statistical screener for edge-positive wallets (Poisson-binomial / FDR).',
-    stack: 'Python · Dune · Goldsky',
-  },
-  {
+    id: 'silvertouch',
+    target: 'web',
     name: 'SilverTouch',
     kind: 'Web · Business',
     year: '2025',
     blurb: 'Renovation studio marketing site.',
     stack: 'WordPress · Divi',
-  },
-  {
-    name: 'TechTour247',
-    kind: 'Web · Experiment',
-    year: '2026',
-    blurb: 'Design-first 3D web playground.',
-    stack: 'three / r3f · GSAP',
-  },
-  {
-    name: 'AI Mafia',
-    kind: 'Bot · Community',
-    year: '2026',
-    blurb: 'Autonomous Discord game master and moderation bot.',
-    stack: 'Node · discord.js',
   },
 ]

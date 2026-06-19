@@ -40,7 +40,7 @@ export const webProjects: WebProject[] = [
     year: '2025',
     stack: ['Next.js 15', 'TypeScript', 'Node.js', 'PostgreSQL', 'REST APIs', 'Azure'],
     role: 'Solo: design, build, infra, SEO',
-    shot: '/shots/fetchi.png',
+    shot: '/shots/fetchi.png?v=2',
     accent: '#ff3b1f',
   },
   {
@@ -53,7 +53,7 @@ export const webProjects: WebProject[] = [
     year: '2026',
     stack: ['Next.js 15', 'TypeScript', 'Tailwind', 'REST APIs', 'LLM APIs', 'Azure'],
     role: 'Founder & Executive Director',
-    shot: '/shots/welcomeaide.png',
+    shot: '/shots/welcomeaide.png?v=2',
     accent: '#1e3a5f',
   },
   {

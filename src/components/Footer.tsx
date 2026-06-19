@@ -11,6 +11,7 @@ export default function Footer() {
           <div className="grid grid-cols-1 gap-x-12 gap-y-6 sm:col-span-8 sm:col-start-5 sm:grid-cols-2">
             <Contact label="Email" value="eaa82@sfu.ca" copy="eaa82@sfu.ca" />
             <Contact label="GitHub" value="github.com/erfan604" copy="https://github.com/erfan604" />
+            <Contact label="LinkedIn" value="linkedin.com/in/erfanaghdasi" copy="https://www.linkedin.com/in/erfanaghdasi/" />
             <Contact label="Location" value="Vancouver, BC" />
             <Contact label="Phone" value="778-791-4020" copy="778-791-4020" />
             <Contact label="Availability" value="Co-op & internships, Fall 2026" />

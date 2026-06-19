@@ -40,7 +40,7 @@ export const webProjects: WebProject[] = [
     year: '2025',
     stack: ['Next.js 15', 'TypeScript', 'Node.js', 'PostgreSQL', 'REST APIs', 'Azure'],
     role: 'Solo: design, build, infra, SEO',
-    shot: '/shots/fetchi.png?v=2',
+    shot: '/shots/fetchi.png?v=3',
     accent: '#ff3b1f',
   },
   {
@@ -53,7 +53,7 @@ export const webProjects: WebProject[] = [
     year: '2026',
     stack: ['Next.js 15', 'TypeScript', 'Tailwind', 'REST APIs', 'LLM APIs', 'Azure'],
     role: 'Founder & Executive Director',
-    shot: '/shots/welcomeaide.png?v=2',
+    shot: '/shots/welcomeaide.png?v=3',
     accent: '#1e3a5f',
   },
   {
@@ -122,7 +122,7 @@ export const appProjects: AppProject[] = [
     tagline:
       'A client contract: a mobile app that controls Zengge and Magic Home Bluetooth LED strips down to individual pixels, with scene presets and music-reactive effects. Built on a reverse-engineered GATT command protocol and a real-time beat-detection engine that keeps multiple lights in sync.',
     year: '2026',
-    stack: ['React Native', 'Expo', 'TypeScript', 'Bluetooth (BLE)', 'Reanimated'],
+    stack: ['React Native', 'Expo', 'TypeScript', 'Bluetooth (BLE)'],
     status: 'TestFlight builds',
     icon: '◐',
     iconImg: '/shots/glopro-icon.png',

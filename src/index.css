@@ -9,8 +9,8 @@
   --color-paper: #71726f; /* nardo grey canvas */
   --color-paper-2: #7c7d7a; /* raised grey wash */
   --color-ink: #f3f2ee; /* bone foreground text */
-  --color-ink-soft: #d6d6d1; /* secondary text */
-  --color-ink-faint: #a9a9a3; /* tertiary / mono labels */
+  --color-ink-soft: #eae9e5; /* secondary text */
+  --color-ink-faint: #cfcfc9; /* tertiary / mono labels */
   --color-line: #5d5e5b; /* hairline on grey */
   --color-line-strong: #4f504d; /* stronger divider */
   --color-red: #e4002b; /* racing red */
@@ -54,14 +54,6 @@ body {
   font-family: var(--font-sans);
   font-feature-settings: 'ss01', 'ss02';
   overflow-x: hidden;
-  cursor: none;
-}
-
-/* Hide native cursor only where the custom one is active (pointer devices) */
-@media (hover: none) {
-  body {
-    cursor: auto;
-  }
 }
 
 ::selection {
@@ -110,7 +102,7 @@ h3 {
   font-weight: 500;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--color-ink-faint);
+  color: var(--color-ink);
 }
 
 .serif-em {

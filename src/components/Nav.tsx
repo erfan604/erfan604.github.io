@@ -2,9 +2,8 @@ import { motion, AnimatePresence } from 'motion/react'
 import { useState } from 'react'
 
 const links = [
+  { label: 'About', href: '#top' },
   { label: 'Work', href: '#showcase' },
-  { label: 'Index', href: '#index' },
-  { label: 'About', href: '#about' },
 ]
 
 export default function Nav() {
@@ -22,7 +21,7 @@ export default function Nav() {
         className="pointer-events-none absolute inset-0 bg-gradient-to-b from-paper via-paper/75 to-transparent"
       />
 
-      <div className="relative mx-auto flex max-w-[1400px] items-center justify-between px-5 py-5 sm:px-8">
+      <div className="relative mx-auto flex max-w-[1680px] items-center justify-between px-5 py-5 sm:px-8">
         <a href="#top" className="group flex items-center gap-2.5">
           <span className="bg-red grid h-8 w-8 place-items-center rounded-full font-display text-sm font-bold text-white transition-transform duration-300 group-hover:rotate-[18deg]">
             E
@@ -32,7 +31,7 @@ export default function Nav() {
           </span>
         </a>
 
-        <nav className="hidden items-center gap-1 rounded-full border border-line bg-paper/70 px-1.5 py-1.5 backdrop-blur-md sm:flex">
+        <nav className="absolute top-1/2 left-1/2 hidden -translate-x-1/2 -translate-y-1/2 items-center gap-1 rounded-full border border-line bg-paper/70 px-1.5 py-1.5 backdrop-blur-md sm:flex">
           {links.map((l) => (
             <a
               key={l.href}
@@ -91,6 +90,15 @@ export default function Nav() {
                   >
                     <span className="block font-mono text-[10px] tracking-[0.2em] text-ink-faint uppercase">Phone</span>
                     <span className="mt-0.5 block font-display text-sm text-ink">778-791-4020</span>
+                  </a>
+                  <a
+                    href="/Erfan-Aghdasi-Resume.pdf"
+                    download
+                    role="menuitem"
+                    className="block rounded-xl px-4 py-3 transition-colors hover:bg-red/5"
+                  >
+                    <span className="block font-mono text-[10px] tracking-[0.2em] text-ink-faint uppercase">Résumé</span>
+                    <span className="mt-0.5 block font-display text-sm text-ink">Download PDF ↓</span>
                   </a>
                 </motion.div>
               </>

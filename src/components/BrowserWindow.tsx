@@ -75,18 +75,27 @@ export default function BrowserWindow() {
               {project.url.replace('https://', '')}
             </span>
           </div>
-          <a
-            href={project.url}
-            target="_blank"
-            rel="noreferrer"
-            className="shrink-0 rounded-md bg-red px-3 py-1.5 font-mono text-[10px] tracking-wide text-white transition-transform hover:-translate-y-0.5"
-          >
-            Open live ↗
-          </a>
+          {project.published === false ? (
+            <span
+              title="Xantrex has not published this web app yet"
+              className="shrink-0 rounded-md border border-black/15 px-3 py-1.5 font-mono text-[10px] tracking-wide text-[#9a9a9a]"
+            >
+              Not published yet
+            </span>
+          ) : (
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noreferrer"
+              className="shrink-0 rounded-md bg-red px-3 py-1.5 font-mono text-[10px] tracking-wide text-white transition-transform hover:-translate-y-0.5"
+            >
+              {project.ctaLabel ?? 'Open live ↗'}
+            </a>
+          )}
         </div>
 
-        {/* viewport: scrollable screenshot */}
-        <div className="device-scroll relative h-[300px] overflow-y-auto bg-white sm:h-[460px]">
+        {/* viewport: scrollable static screenshot */}
+        <div className="device-scroll relative h-[360px] overflow-y-auto bg-white sm:h-[560px]">
           <AnimatePresence mode="wait">
             <motion.img
               key={project.id}
@@ -108,37 +117,6 @@ export default function BrowserWindow() {
           </div>
         </div>
       </div>
-
-      {/* caption strip: on the grey desk, uses light tokens */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={project.id}
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.3 }}
-          className="mt-5 grid gap-3 sm:grid-cols-12"
-        >
-          <div className="sm:col-span-6">
-            <h3 className="font-display text-2xl font-bold text-ink">{project.name}</h3>
-            <p className="mt-1 max-w-md text-ink-soft">{project.tagline}</p>
-          </div>
-          <div className="flex flex-col gap-1.5 font-mono text-[11px] text-ink-faint sm:col-span-6">
-            <Row k="Role" v={project.role} />
-            <Row k="Stack" v={project.stack.join(' · ')} />
-            <Row k="Year" v={project.year} />
-          </div>
-        </motion.div>
-      </AnimatePresence>
-    </div>
-  )
-}
-
-function Row({ k, v }: { k: string; v: string }) {
-  return (
-    <div className="flex justify-between gap-4 border-b border-line/70 pb-1.5">
-      <span className="uppercase tracking-[0.18em]">{k}</span>
-      <span className="text-right text-ink-soft">{v}</span>
     </div>
   )
 }

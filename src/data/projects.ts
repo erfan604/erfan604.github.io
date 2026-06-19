@@ -9,6 +9,8 @@ export type WebProject = {
   role: string
   shot: string // path under /public
   accent?: string
+  published?: boolean // false = client hasn't published it publicly; hides "Open live"
+  ctaLabel?: string // override for the action button (default "Open live ↗")
 }
 
 export type AppProject = {
@@ -18,9 +20,12 @@ export type AppProject = {
   year: string
   stack: string[]
   status: string
-  icon: string // emoji or short glyph for the home-screen tile
+  icon: string // emoji fallback for the home-screen tile
+  iconImg: string // real app launcher icon (path under /public)
   tile: string // tailwind gradient classes for the app tile
-  screens: string[] // paths under /public
+  screens: string[] // real app screenshots (paths under /public) — fallback when no live demo
+  webUrl?: string // live, navigable web build to embed in the phone (when available)
+  screenBg?: string // app's top background, fills the status-bar inset behind a live embed
 }
 
 /* ---- WEBSITES (browser window) ---- */
@@ -28,11 +33,12 @@ export const webProjects: WebProject[] = [
   {
     id: 'fetchi',
     name: 'Fetchi',
-    tagline: 'A taste-driven product aggregator. Search, rerank, discover.',
+    tagline:
+      'A shopping aggregator that unifies thousands of brands across 90+ retailers into one feed and reranks results by desirability instead of raw keyword match. Server-rendered product pages, semantic search with an embedding fallback, geo-routed image delivery, and an SEO/editorial layer that drives organic traffic.',
     url: 'https://fetchi.shop',
     domain: 'fetchi.shop',
     year: '2025',
-    stack: ['Next.js', 'Azure', 'Postgres', 'R2 CDN'],
+    stack: ['Next.js 15', 'TypeScript', 'Node.js', 'PostgreSQL', 'REST APIs', 'Azure'],
     role: 'Solo: design, build, infra, SEO',
     shot: '/shots/fetchi.png',
     accent: '#ff3b1f',
@@ -40,11 +46,12 @@ export const webProjects: WebProject[] = [
   {
     id: 'welcomeaide',
     name: 'WelcomeAide',
-    tagline: 'AI tools that help newcomers settle into Canada. 21 languages.',
+    tagline:
+      'An AI nonprofit platform of free settlement tools for newcomers to Canada, anchored by the Aida assistant for navigating immigration, housing, and government paperwork. Localized into 21 languages with full RTL support, React Server Components, and an automated translation pipeline that runs on every commit.',
     url: 'https://welcomeaide.com',
     domain: 'welcomeaide.com',
     year: '2026',
-    stack: ['Next.js 15', 'TS', 'Tailwind', 'Azure ACA'],
+    stack: ['Next.js 15', 'TypeScript', 'Tailwind', 'REST APIs', 'LLM APIs', 'Azure'],
     role: 'Founder & Executive Director',
     shot: '/shots/welcomeaide.png',
     accent: '#1e3a5f',
@@ -52,14 +59,43 @@ export const webProjects: WebProject[] = [
   {
     id: 'silvertouch',
     name: 'SilverTouch',
-    tagline: 'Renovation studio site. Built and maintained for the family trade.',
+    tagline:
+      'The marketing site for a family renovation studio: service breakdowns, a project gallery, and lead capture. Built on a hand-tuned Divi child theme with custom CSS and JavaScript, and maintained directly over FTPS rather than through plugins.',
     url: 'https://silvertouchrenovation.com',
     domain: 'silvertouchrenovation.com',
     year: '2022',
-    stack: ['WordPress', 'Divi', 'Custom CSS'],
+    stack: ['WordPress', 'PHP', 'JavaScript', 'HTML / CSS', 'MySQL'],
     role: 'Design & build',
     shot: '/shots/silvertouch.png',
     accent: '#9a7b4f',
+  },
+  {
+    id: 'xantrex',
+    name: 'Xantrex',
+    tagline:
+      'A client project built with two classmates for SFU’s CMPT 276 software-engineering course: a solar MPPT charge-controller sizing tool. Enter panel specs, array layout, and battery-bank voltage and it applies NEC temperature-correction factors plus Victron datasheet limits to select a compatible controller. Spring Boot with Thymeleaf, Postgres persistence, and live minimum-temperature lookups from Open-Meteo.',
+    url: 'https://xantrex.welcomeaide.com/calculator',
+    domain: 'xantrex.welcomeaide.com',
+    year: '2026',
+    stack: ['Java', 'Spring Boot', 'Spring MVC', 'Spring Security', 'JPA / Hibernate', 'PostgreSQL'],
+    role: 'Team of 3 · backend + sizing logic',
+    shot: '/shots/xantrex.png?v=4',
+    accent: '#f59e0b',
+    published: false,
+  },
+  {
+    id: 'rubiks',
+    name: "Rubik's Solver",
+    tagline:
+      'A Kociemba two-phase solver in Java that cracks any scrambled cube in well under a second. Admissible IDA* heuristics from precomputed pruning tables, a compact coordinate encoding of the cube, and clean OOP design searching a 43-quintillion-state space. No live site, so the tab opens the source repo.',
+    url: 'https://github.com/erfan604/RubiksCube-solver',
+    domain: 'github.com/erfan604/RubiksCube-solver',
+    year: '2025',
+    stack: ['Java', 'Algorithms', 'Data Structures', 'OOP', 'Heuristic Search'],
+    role: 'Solo · algorithms',
+    shot: '/shots/rubiks.png?v=3',
+    accent: '#16a34a',
+    ctaLabel: 'View source ↗',
   },
 ]
 
@@ -68,94 +104,31 @@ export const appProjects: AppProject[] = [
   {
     id: 'crumb',
     name: 'Crumb',
-    tagline: 'Track gluten-free spending, claim the celiac tax credit.',
+    tagline:
+      'A personal project I am building for my sister, who has celiac disease. It helps people with celiac recover the gluten-free price premium as a medical tax credit, using barcode lookup and receipt scanning to flag eligible items and tally the claimable difference. Offline-first local store synced to a Cloudflare Workers + D1 + R2 backend, with on-device AI for receipt parsing.',
     year: '2026',
-    stack: ['Expo / RN', 'Cloudflare D1', 'R2', 'Workers AI'],
+    stack: ['React Native', 'Expo', 'TypeScript', 'REST APIs', 'SQL', 'Serverless'],
     status: 'In TestFlight',
     icon: '🍞',
+    iconImg: '/shots/crumb-icon.png',
     tile: 'from-amber-400 to-orange-500',
-    screens: ['/shots/crumb-1.png', '/shots/crumb-2.png'],
+    screens: ['/shots/crumb-1.png?v=3'],
+    webUrl: 'https://crumb.welcomeaide.com/home',
+    screenBg: '#f7f5ef',
   },
   {
     id: 'glopro',
     name: 'GloPro',
-    tagline: 'Pair with smart LED controllers to drive individual lights, scenes, and music-synced effects.',
+    tagline:
+      'A client contract: a mobile app that controls Zengge and Magic Home Bluetooth LED strips down to individual pixels, with scene presets and music-reactive effects. Built on a reverse-engineered GATT command protocol and a real-time beat-detection engine that keeps multiple lights in sync.',
     year: '2026',
-    stack: ['Expo / RN', 'BLE', 'Reanimated'],
+    stack: ['React Native', 'Expo', 'TypeScript', 'Bluetooth (BLE)', 'Reanimated'],
     status: 'TestFlight builds',
     icon: '◐',
+    iconImg: '/shots/glopro-icon.png',
     tile: 'from-fuchsia-500 to-indigo-600',
-    screens: ['/shots/glopro-1.png', '/shots/glopro-2.png'],
-  },
-]
-
-/* ---- INDEX LIST (each row jumps to and activates its live exhibit) ---- */
-export type IndexEntry = {
-  id: string
-  target: 'web' | 'app' | 'repo'
-  name: string
-  kind: string
-  year: string
-  blurb: string
-  stack: string
-  href?: string // external link (e.g. source repo) for entries with no live exhibit
-}
-
-export const indexEntries: IndexEntry[] = [
-  {
-    id: 'fetchi',
-    target: 'web',
-    name: 'Fetchi',
-    kind: 'Web · Commerce',
-    year: '2025',
-    blurb: 'Product aggregator with semantic search & geo-routed rails.',
-    stack: 'Next.js · Azure · Postgres',
-  },
-  {
-    id: 'welcomeaide',
-    target: 'web',
-    name: 'WelcomeAide',
-    kind: 'Web · Nonprofit',
-    year: '2026',
-    blurb: 'Multilingual AI assistant for newcomers to Canada.',
-    stack: 'Next.js 15 · Azure ACA',
-  },
-  {
-    id: 'crumb',
-    target: 'app',
-    name: 'Crumb',
-    kind: 'iOS · Health/Fintech',
-    year: '2026',
-    blurb: 'Celiac GF tax-credit tracker with receipt OCR.',
-    stack: 'Expo · CF D1/R2/AI',
-  },
-  {
-    id: 'glopro',
-    target: 'app',
-    name: 'GloPro',
-    kind: 'iOS · Hardware',
-    year: '2026',
-    blurb: 'iOS app that pairs with smart LED controllers to command individual lights, scenes, and music-reactive effects.',
-    stack: 'Expo · BLE · Reanimated',
-  },
-  {
-    id: 'silvertouch',
-    target: 'web',
-    name: 'SilverTouch',
-    kind: 'Web · Business',
-    year: '2022',
-    blurb: 'Renovation studio marketing site.',
-    stack: 'WordPress · Divi',
-  },
-  {
-    id: 'rubiks',
-    target: 'repo',
-    name: 'Rubik’s Solver',
-    kind: 'Java · Algorithms',
-    year: '2025',
-    blurb:
-      'Kociemba two-phase IDA* solver in Java: admissible heuristics from precomputed pruning tables, a compact coordinate cube encoding, and clean OOP design searching a 43-quintillion-state space.',
-    stack: 'Java · IDA* · DSA · OOP',
-    href: 'https://github.com/erfan604/RubiksCube-solver',
+    screens: ['/shots/glopro-1.png', '/shots/glopro-2.png', '/shots/glopro-3.png'],
+    webUrl: 'https://glopro-adn.pages.dev',
+    screenBg: '#0b0d12',
   },
 ]

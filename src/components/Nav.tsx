@@ -92,7 +92,7 @@ export default function Nav() {
                     <span className="mt-0.5 block font-display text-sm text-ink">778-791-4020</span>
                   </a>
                   <a
-                    href="/Erfan-Aghdasi-Resume.pdf"
+                    href="/Erfan-Aghdasi-Resume.pdf?v=2"
                     download
                     role="menuitem"
                     className="block rounded-xl px-4 py-3 transition-colors hover:bg-red/5"
